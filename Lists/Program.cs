@@ -49,16 +49,39 @@ namespace Lists
             for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine("Please enter a number: ");
-                
-                
+
+
                 numbers.Add(Convert.ToInt32(Console.ReadLine()));
             }
             Console.ReadLine(); // Keeps the program from ending
             Console.WriteLine("The largest number is " + numbers.Max());
             Console.WriteLine("The smallest number is " + numbers.Min());
             Console.WriteLine("The sum is " + numbers.Sum());
-            Console.WriteLine("The average is " + numbers.Average());  
+            Console.WriteLine("The average is " + numbers.Average());
+
+            // Loop through the List backwards challenge
+            Console.WriteLine("Here are the numbers in reverse order:");
+            for (int i = numbers.Count - 1; i >= 0; i--) // We start at the last index (Length-1) and end at zero.
+            {
+                Console.Write(numbers[i] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            
+            int biggerThanFive = 0;
+            // Loop through the array and only print values bigger than 5
+            Console.WriteLine("Numbers larger than 5 are:");
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                if (numbers[i] > 5)
+                {
+                    Console.Write(numbers[i] + " ");
+                    biggerThanFive += 1;    // Counts the number of values bigger than 5 challenge
+                }
+
+            }
+            Console.WriteLine();
+            Console.WriteLine("There are " + biggerThanFive + " numbers larger than 5.");
         }
     }
 }
-
